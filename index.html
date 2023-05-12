@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="shortcut icon " href="./src/img/header/Ellipse 1.svg">
+    <title>Bright lights</title>
+</head>
+<body>
+    <form class="form" action="">
+         <input class="form__input"  type="email">
+         <label class="form__label" for="email">Email</label>
+         <input class="form__input form__input-first"  type="text">
+         <label class="form__label-first" for="text">Phone number</label>
+         
+         <input id="password-input" class="form__input form__input-second" type="password" placeholder="Password">
+         <a href="./web.html"><div  class="form__btn">click me</div></a>
+         <a class="form__password-control"  href="#">
+         <img class="form__png" src="./src/img/form/1000_F_209953282_3KQ7zq5JqeR5B7avR8DvsB2Ds6qf1Dkv-removebg-preview.png" alt="form">
+         <img class="form__png_view" src="./src/img/form/eye-3-xxl.png" alt="form">
+         </a>
+    </form>
+
+    <script src="./src/libs/jquery/jquery-3.6.3.min.js"></script>
+    <script>
+        $('body').on('click', '.form__password-control', function(){
+            if($('#password-input').attr('type') == 'password' ){
+                $(this).toggleClass('.view');
+                $('#password-input').attr('type', 'text');
+            }else{
+                $(this).removeClass('.view');
+                $('#password-input').attr('type','password');
+            }
+            return false;
+        })
+        $(document).ready(function() {
+        $(".form__password-control").click(function(event) {
+            $(".form__png_view, .form__png").toggleClass("active");
+        });
+      });
+    </script>
+</body>
+</html>
